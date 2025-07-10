@@ -1,0 +1,93 @@
+.form-container {
+  padding: 0;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 400px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-dialog-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+mat-dialog-title mat-icon {
+  color: #1976d2;
+}
+
+mat-dialog-content {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+mat-dialog-actions {
+  padding: 16px 0;
+  margin: 0;
+}
+
+mat-dialog-actions button {
+  min-width: 100px;
+}
+
+mat-dialog-actions button[type="submit"] {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+mat-dialog-actions button[type="submit"] mat-spinner {
+  margin-right: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .form-fields {
+    min-width: auto;
+  }
+  
+  .form-container {
+    padding: 16px;
+  }
+}
+
+/* Estilos para los campos de formulario */
+mat-form-field {
+  margin-bottom: 8px;
+}
+
+mat-form-field mat-label {
+  color: #666;
+}
+
+mat-form-field input,
+mat-form-field textarea {
+  color: #333;
+}
+
+mat-form-field.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #ccc;
+}
+
+mat-form-field.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #1976d2;
+}
+
+mat-form-field.mat-form-field-appearance-outline.mat-form-field-invalid .mat-form-field-outline-thick {
+  color: #f44336;
+}
+
+/* Estilos para los errores */
+mat-error {
+  font-size: 12px;
+  color: #f44336;
+}

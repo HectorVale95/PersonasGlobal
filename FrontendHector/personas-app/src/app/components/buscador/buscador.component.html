@@ -1,0 +1,57 @@
+<div class="buscador-container">
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Buscar por nombre o apellido</mat-label>
+    <input
+      matInput
+      [formControl]="searchControl"
+      placeholder="Nombre o apellido"
+      autocomplete="off"
+      (keyup.enter)="onBuscar()"
+      >
+      <mat-icon matSuffix>search</mat-icon>
+
+      <!-- Mensajes de error -->
+      @if (searchControl.hasError('minlength')) {
+        <mat-error>
+          {{ getErrorMessage() }}
+        </mat-error>
+      }
+      @if (searchControl.hasError('maxlength')) {
+        <mat-error>
+          {{ getErrorMessage() }}
+        </mat-error>
+      }
+      @if (searchControl.hasError('pattern')) {
+        <mat-error>
+          {{ getErrorMessage() }}
+        </mat-error>
+      }
+
+      <!-- Hint -->
+      <mat-hint>Ingrese al menos 2 caracteres</mat-hint>
+    </mat-form-field>
+
+    <div class="buscador-actions">
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="!isSearchValid"
+        (click)="onBuscar()"
+        matTooltip="Buscar personas"
+        class="search-button">
+        <mat-icon>search</mat-icon>
+        Buscar
+      </button>
+
+      <button
+        mat-stroked-button
+        color="warn"
+        [disabled]="!searchControl.value?.trim()"
+        (click)="onLimpiar()"
+        matTooltip="Limpiar búsqueda"
+        class="clear-button">
+        <mat-icon>clear</mat-icon>
+        Limpiar
+      </button>
+    </div>
+  </div>

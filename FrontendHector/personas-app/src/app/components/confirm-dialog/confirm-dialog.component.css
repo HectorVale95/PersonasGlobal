@@ -1,0 +1,40 @@
+.confirm-dialog {
+  padding: 0;
+}
+
+mat-dialog-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #d32f2f;
+}
+
+mat-dialog-title mat-icon {
+  color: #d32f2f;
+}
+
+mat-dialog-content {
+  padding: 16px 0;
+}
+
+mat-dialog-content p {
+  margin: 0;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+mat-dialog-actions {
+  padding: 16px 0;
+  margin: 0;
+}
+
+mat-dialog-actions button {
+  min-width: 100px;
+}
+
+mat-dialog-actions button[color="warn"] {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
